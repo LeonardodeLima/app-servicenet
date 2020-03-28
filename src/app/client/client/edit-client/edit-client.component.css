@@ -1,0 +1,10 @@
+.menssagem-error {
+    text-align: center;
+    font-size: 11px;
+    color: #FF0000;
+}
+
+agm-map {
+    height: 800px;
+    padding: 10px;
+}

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div style="padding: 38px;" class="input-group">
+            <div class="input-group-prepend">
+                <a style="padding: 7px; text-decoration: none; margin-right: 11px;" [routerLink]="['/list-client']">
+                    Voltar </a>
+            </div>
+            <h2 class="text-center">Adicionar cliente</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div style="padding: 4%;" class="col-md-12 user-container">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" formControlName="name" placeholder="nome" name="name " class="form-control" id="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone:</label>
+                        <input type="text" ngPattern="/^\([1-9]{2}\)[0-9]{4,5}-[0-9]{4}$/" mask="(00) 00000-0000" formControlName="phone" placeholder="Telefone" name="phone " class="form-control" id="phone">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrZipcode">CEP:</label>
+                        <input (focusout)="cepOnKeydownEvent()" type="text" ngPattern="/^\([1-9]{2}\)[0-9]{4,5}-[0-9]{4}$/" mask="00000-000" formControlName="addrZipcode" placeholder="CEP" name=" addrZipcode" class="form-control" id="addrZipcode ">
+                        <p class="menssagem-error" *ngIf="erroCep !='' ">{{erroCep}}</p>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrStreet ">Rua:</label>
+                        <input type="text " formControlName="addrStreet" placeholder="rua" name="addrStreet" class="form-control" id="addrStreet">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrNumber ">Número:</label>
+                        <input type="number " formControlName="addrNumber" placeholder="número" name="addrNumber" class="form-control" id="addrNumber ">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrCity ">Cidade:</label>
+                        <input type="text " formControlName="addrCity" placeholder="cidade" name="addrCity" class="form-control" id="addrCity ">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrState ">Estado:</label>
+                        <input type="text " formControlName="addrState" placeholder="estado" name="addrState" class="form-control" id="addrState ">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="addrCountry ">Pais:</label>
+                        <input type="text " formControlName="addrCountry" placeholder="estado" name="addrCountry" class="form-control" id="addrCountry ">
+                    </div>
+
+                    <button class="btn btn-success ">Adicionar</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <agm-map (mapReady)="mapReady($event)" [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>
