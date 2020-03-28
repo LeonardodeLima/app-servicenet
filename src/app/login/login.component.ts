@@ -83,8 +83,6 @@ export class LoginComponent implements OnInit{
 
       let userMail = userData.email;
       if(userData.email == undefined) userMail =  userData.id;
-      console.log(userMail, userData)
-      console.log("user data", userData);
 
       this.userService.login(userMail , userData.id+userData.email, () => { 
         this.loading = false;
