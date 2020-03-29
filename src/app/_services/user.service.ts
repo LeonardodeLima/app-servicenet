@@ -15,13 +15,13 @@ export class UserService {
 
 
     login(email:string, password:string, successCallback: Function, errorCallback: Function){
-        this.loginService(email, password).then(data => {
-            // if(!data.token){
-            //     errorCallback(data);
-            // }else{
+        this.loginService(email, password).then( data => {
+            if(!data['token']){
+                errorCallback(data);
+            }else{
                 sessionStorage.setItem("userLogged", JSON.stringify(data) );
                 successCallback();
-            // }  
+            }  
         }, error => {
             errorCallback(error);
         });
@@ -31,6 +31,7 @@ export class UserService {
     loginService(email:string, password:string) {
 
         return this.httpClient.post(API_URL+this.router_login, { "email":email,  "password":password }).toPromise();
+        
     }
 
     register(email:string, password: string, name:string){
