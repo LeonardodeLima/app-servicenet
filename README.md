@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # required
    
-required Node.jsˆ8.x and MongoDB ˆ4.x
+required Node.jsˆ8.x and Angular CLI
 
 Node.js: https://nodejs.org/en/ 
 
