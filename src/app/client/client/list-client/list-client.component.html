@@ -24,7 +24,7 @@
                         <tr *ngFor="let client of clients">
                             <td>{{client.name}}</td>
                             <td>({{ client.phone | slice:0:2 }}) {{ client.phone | slice:2:3}} {{ client.phone | slice:3:7 }}-{{ client.phone | slice:7:11 }}</td>
-                            <td>{{client.addrZipcode | slice:0:5}}-{{client.addrZipcode | slice:6:9}}</td>
+                            <td>{{client.addrZipcode | slice:0:5}}-{{client.addrZipcode | slice:6:10}}</td>
                             <td>{{client.addrStreet}}</td>
                             <td>{{client.addrNumber}}</td>
                             <td>{{client.addrCity}}</td>
