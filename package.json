@@ -30,7 +30,7 @@
         "angularx-social-login": "^2.2.1",
         "bootstrap": "^4.4.1",
         "core-js": "^2.5.4",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "ngx-mask-2": "^6.5.23",
         "ngx-toastr": "^10.0.4",
         "path": "^0.12.7",
